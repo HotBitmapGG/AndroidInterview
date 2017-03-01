@@ -38,9 +38,8 @@
  
  -  return false  ：则表示不对事件进行拦截，事件得以成功分发到子View。并由子View的dispatchTouchEvent进行处理。　
  
- - 如果返回super.onInterceptTouchEvent(ev)，默认表示拦截该事件，并将事件传递给当前View的onTouchEvent方法，和return true一样。
-
-
+ - 如果返回super.onInterceptTouchEvent(ev)，默认表示不拦截该事件，并将事件传递给子View的dispatchTouchEvent进行处理，和return false 一样。
+ 
 > **事件响应：public boolean onTouchEvent(MotionEvent ev)**
 
 　　在dispatchTouchEvent（事件分发）返回super.dispatchTouchEvent(ev)并且onInterceptTouchEvent（事件拦截返回true或super.onInterceptTouchEvent(ev)的情况下，那么事件会传递到onTouchEvent方法，该方法对事件进行响应。
